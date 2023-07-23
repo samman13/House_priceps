@@ -1,0 +1,57 @@
+html{
+    background-color: rgb(212, 212, 212,0.5);
+    font-family: 'Montserrat','sans serif';
+}
+main{
+margin:180px 80px;
+background-color: white;
+border-radius: 45px;
+transform: scale(deg(1));
+
+}
+.make-prediction__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    padding:10px;
+    color: rgba(0, 0, 0,0.9);
+    
+}
+
+.form-items{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content:end;
+    
+}
+.form-item input{
+    display: inline-block;
+    width: 60%;
+    margin: 15px;
+    font-size: 18px;
+    padding: 18px;
+}
+.form-item.checkbox{
+    display: inline-block;
+    width: 60%;
+    margin: 15px;
+    border: 0.5px solid #4F4F4F;
+}
+.form-item.checkbox input{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+}
+.form-item.checkbox label{
+    vertical-align: middle;
+    margin-bottom: 16px;
+    display: inline-block;
+    width: calc(100%-30px);
+    color: gray;
+    font-size :18px;
+  
+    
+}
