@@ -19,7 +19,8 @@
     <main class="login">
       <section class="login-content">
         <div class="login-content__title">Login to Predicta</div>
-        <form action="" class="login-content__form" id="form">
+        <form action="" class="login-content__form" id="form" method="POST">
+          {% csrf_token %}
           <div class="form-item">
             <input
               type="text"
@@ -38,8 +39,8 @@
           <div class="form-item">
             <input
               type="password"
-              name="password"
-              id="password"
+              name="password1"
+              id="password1"
               placeholder="Choose Password"
             />
             <div class="error"></div>
@@ -47,8 +48,8 @@
           <div class="form-item">
             <input
               type="password"
-              name="confirm_pass"
-              id="confirm_pass"
+              name="password2"
+              id="password2"
               placeholder="Confirm Password"
             />
             <div class="error"></div>
