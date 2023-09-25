@@ -126,3 +126,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = 'profile'  # URL to redirect to after login
+LOGIN_URL = 'login'             # URL to the login page

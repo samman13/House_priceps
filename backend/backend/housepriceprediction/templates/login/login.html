@@ -21,8 +21,9 @@
             <div class="login-content__title">
             Login to Predicta
             </div>
-            <form action="" class="login-content__form" id="form">
-                    <div class="form-item">
+            <form action="" class="login-content__form" id="form" method="post">
+                 {% csrf_token %} 
+                <div class="form-item">
                         <input type="text" name="username" id="username" placeholder="Username">
                         <div class="error"></div>
                     </div>
