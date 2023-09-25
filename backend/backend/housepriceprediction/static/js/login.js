@@ -3,10 +3,10 @@
 const form = document.querySelector("#form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
-const rememberPassword = document.querySelector("#remember");
+// const rememberPassword = document.querySelector("#remember");
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  // e.preventDefault();   
   loginValidation();
 });
 

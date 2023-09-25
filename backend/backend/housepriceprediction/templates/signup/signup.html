@@ -19,7 +19,7 @@
     <main class="login">
       <section class="login-content">
         <div class="login-content__title">Login to Predicta</div>
-        <form action="" class="login-content__form" id="form" method="POST">
+        <form action="/page/login" class="login-content__form" id="form" method="POST">
           {% csrf_token %}
           <div class="form-item">
             <input
@@ -52,16 +52,6 @@
               id="confirm_pass"
               placeholder="Confirm Password"
             />
-            <div class="error"></div>
-          </div>
-
-          <div class="form-item">
-            <input
-              type="checkbox"
-              class="checkbox"
-              name="terms_n_conditions"
-              id="terms"
-            /><label for="terms">Agree with terms and conditions</label>
             <div class="error"></div>
           </div>
 

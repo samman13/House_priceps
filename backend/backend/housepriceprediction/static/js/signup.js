@@ -5,13 +5,13 @@ const usernameInput = document.querySelector("#username");
 const userMail = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 const passwordConfirmInput = document.querySelector("#confirm_pass");
-const terms = document.querySelector("#terms");
+// const terms = document.querySelector("#terms");
 // const errorsController = document.querySelector(".errors");
 
 // TODO: Create an event listener for when the form is submitted and do the following inside of it.
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   validateForm();
 });
 
@@ -60,11 +60,6 @@ const validateForm = () => {
     setSucess(passwordConfirmInput);
   }
 
-  if (!terms.checked) {
-    setError(terms, "Agree to terms and Conditions");
-  } else {
-    setSucess(terms);
-  }
 };
 
 // TODO: Define this function
