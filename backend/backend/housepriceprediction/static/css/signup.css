@@ -57,13 +57,13 @@ width:360px;
 .form-item input:focus{
  outline: none;
 }
-input.checkbox{
+/* input.checkbox{
 display: inline-block;
 width: 30px;
 height:18px ;
 margin: 0;
 accent-color:rgb(139,97,233) ;
-}
+} */
 .form-item label{
   color:#808080 ; 
    height:18px; 

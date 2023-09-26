@@ -18,32 +18,41 @@
   </head>
   <body>
     <header class="main-header">
-      <div>
-        <img
-          src="{%static 'image/main_header_logo.jpg'%}"
-          class="main-header__logo"
-          alt="main-logo"
-        /><a href="" class="main-header__brand">Predicta</a>
-      </div>
-      <nav class="main-nav">
-        <ul class="main-nav__items">
-          <li class="main-nav__item">
-            <a href="/page/home/">Home</a>
-          </li>
-          <li class="main-nav__item">
-            <a href="/page/about/">About us</a>
-          </li>
-          <li class="main-nav__item">
-            <a href="/page/prediction/">Predict Now</a>
-          </li>
-          <li class="main-nav__item">
-            <a href="/page/contact/">Contact us</a>
-          </li>
-          <li class="main-nav__item main-nav__item--cta">
-            <a href="/page/login/">Login</a>
-          </li>
-        </ul>
-      </nav>
+        <div>
+            <img src="{% static '/image/main_header_logo.jpg' %}" class="main-header__logo" alt="main-logo">
+            <a href="" class="main-header__brand">Predicta</a>
+
+            {% if user.is_authenticated %}
+            <p class="username">
+                Welcome,{{ user.username }}!
+            </p>
+            {% endif %}
+        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__items">
+                <li class="main-nav__item">
+                    <a href="/page/home/">Home</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="/page/about/">About us</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="/page/prediction/">Predict Now</a>
+                </li>
+                <li class="main-nav__item">
+                    <a href="/page/contact/">Contact us</a>
+                </li>
+
+
+                <li class="main-nav__item main-nav__item--cta">
+                    {% if user.is_authenticated %}
+                    <a href="/page/logout/">Logout</a>
+                    {% else %}
+                    <a href="/page/login/">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
     </header>
     <main id="make-prediction">
       <div class="make-prediction__title">
@@ -73,6 +82,7 @@
           <input type="checkbox" id="parking" />
           <label for="parking">Include Parking</label>
         </div>
+        <button class="btn" type="submit">Make prediction</button>
       </form>
     </main>
     <footer class="main-footer">

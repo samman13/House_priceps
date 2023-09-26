@@ -1,3 +1,10 @@
+# from django.contrib.auth import login, authenticate
+# from django.contrib import messages
+# from django.shortcuts import render, redirect
+# from django.contrib.auth.models import User
+# from django.contrib.auth import authenticate, login as auth_login
+# from django.http import HttpResponse
+# from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -5,7 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth import logout as auth_logout
 
 
 # Create your views here.
@@ -44,6 +51,12 @@ def login(request):
                 return HttpResponse('Error, user does not exist or incorrect password.')
 
     return render(request, 'login/login.html')
+
+
+def custom_logout(request):
+    auth_logout(request)
+    return redirect('/page/login/')
+
 
 @login_required
 def prediction(request):

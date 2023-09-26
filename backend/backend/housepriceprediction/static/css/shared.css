@@ -8,39 +8,62 @@ body {
 }
 
 .main-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     position: fixed;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
-    background:#fff;
+    background: #fff;
     padding: 20px 16px;
-    z-index:1;
+    z-index: 1;
     border-bottom: 0.1px solid gray;
-    
+
 }
 
-.main-header > div {
-    padding-left:62px;
-    display: inline-block;
+.main-header>div {
+    padding-left: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     vertical-align: middle;
 }
-.main-header__logo{
-    width:26px;
+
+.username {
+    display: inline-block;
+    height: 100%;
+    padding: 0 20px;
+    margin-top: 0px;
+    padding-bottom: 0;
+    text-align: center;
+    vertical-align: top;
+    color: forestgreen;
+    font-size: 20px;
+}
+
+.main-header__logo {
+    width: 26px;
     height: 26px;
 }
+
 .main-header__brand {
-    color:crimson;
+    color: crimson;
     text-decoration: none;
     font-weight: 400;
     font-size: 22px;
     display: inline-block;
-    height:22px;
+    height: 22px;
 }
 
 .main-nav {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
     text-align: right;
-    width: calc(100% - 189px);
     vertical-align: middle;
 }
 
@@ -71,8 +94,8 @@ body {
 
 .main-nav__item--cta a {
     font-weight: 600;
-    color:white;
-    background: #00DFA2 ;
+    color: white;
+    background: #00DFA2;
     padding: 8px 20px;
     border-radius: 8px;
 }
