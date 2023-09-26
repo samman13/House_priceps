@@ -34,12 +34,12 @@ def contact(request):
 def login(request):
     if request.method == 'POST':
             username = request.POST.get('username')
-            password = request.POST.get('password')
+            password1 = request.POST.get('password')
 
-            user = authenticate(request, username=username, password=password)
+            user = authenticate(request, username=username, password=password1)
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('/page/home/')
             else:
                 return HttpResponse('Error, user does not exist or incorrect password.')
 
@@ -63,33 +63,39 @@ def signup(request):
             return redirect('signup')
 
         # Check if the username is already taken
-        if User.objects.filter(username=username).exists():
+        elif User.objects.filter(username=username).exists():
             messages.error(
                 request, "Username is already taken. Please choose a different one.")
             return redirect('signup')
 
         # Check if the email is already in use
-        if User.objects.filter(email=email).exists():
+        elif User.objects.filter(email=email).exists():
             messages.error(
                 request, "Email is already in use. Please use a different email.")
             return redirect('signup')
 
         # Create the user
-        new_user = User.objects.create_user(
-            username=username, email=email, password=password1)
-        new_user.save()
+          # Check if the username is already taken
+        #
+        else:
 
-        # Log the user in
-        user = authenticate(request, username=username, password=password1)
-        if user is not None:
-            login(request, user)
+            my_user = User.objects.create_user(username, email, password1)
+            my_user.save()
+            return redirect('/page/login/')
 
-        messages.success(
-            request, "Registration successful. You are now logged in.")
-        return redirect('/page/login/')
+
+        # # Log the user in
+        # user = authenticate(request, username=username, password=password1)
+        # if user is not None:
+        #     login(request, user)
+
+        # messages.success(
+            # request, "Registration successful. You are now logged in.")
+        # return redirect('/page/login/')
 
 
     return render(request,'signup/signup.html')
 
 def error(request):
     return render(request,'404.html')
+
