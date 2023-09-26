@@ -98,4 +98,3 @@ def signup(request):
 
 def error(request):
     return render(request,'404.html')
-
