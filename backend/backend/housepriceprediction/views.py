@@ -2,7 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as auth_login
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
@@ -38,7 +38,7 @@ def login(request):
 
             user = authenticate(request, username=username, password=password1)
             if user is not None:
-                login(request, user)
+                auth_login(request, user)
                 return redirect('/page/home/')
             else:
                 return HttpResponse('Error, user does not exist or incorrect password.')
