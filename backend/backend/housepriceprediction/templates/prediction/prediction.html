@@ -58,7 +58,7 @@
       <div class="make-prediction__title">
         <h1>Provide Information for your Dream House</h1>
       </div>
-      <form action="" class="form-items">
+      <form action="" class="form-items" method="post">
         <div class="form-item">
           <input type="text" placeholder="Location of House" id="address" />
         </div>
@@ -82,7 +82,44 @@
           <input type="checkbox" id="parking" />
           <label for="parking">Include Parking</label>
         </div>
-        <button class="btn" type="submit">Make prediction</button>
+        <div class="form-item">
+          <input type="number" placeholder="Area" id="area" />
+        </div>
+        <div class="form-item">
+          <input type="number" placeholder="roadwidth" id="roadwidth" />
+        </div>
+        <div class="form-item">
+          <input type="number" placeholder="face" id="face" />
+        </div>
+        <div class="form-item">
+          <label for="amenities">Amenities</label>
+          <select id="amenities">
+           <option value="drainage">Drainage<option/>
+           <option value="internet">Internet<option/>
+            <option value="cctv">CCTV<option/>
+            <option value="electricity">Electricity<option/>
+            <option value="garden">Garden<option/>
+            <option value="balcony">Balcony<option/>
+           </select>
+                       
+        </div>
+        <div class="form-item">
+          <label for="roadtype">RoadType</label>
+          <select id="roadtype">
+           <option value="drainage"><option/>
+           <option value="internet">Internet<option/>
+            <option value="cctv">CCTV<option/>
+            <option value="electricity">Electricity<option/>
+            <option value="garden">Garden<option/>
+            <option value="balcony">Balcony<option/>
+           </select>
+                       {% comment %} Gravelled', ' Soil Stabilized',
+ ' Paved', 'Blacktopped', ' Concrete', Alley' {% endcomment %}
+        </div>
+
+        <button class="btn"
+         type="submit">Make prediction
+        </button>
       </form>
     </main>
     <footer class="main-footer">
